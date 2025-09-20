@@ -1,4 +1,5 @@
 import React, { use } from 'react';
+import Country from './Country';
 
 const Countries = ({apiUrl}) => {
     let courtriesData=use(apiUrl);
@@ -9,7 +10,9 @@ const Countries = ({apiUrl}) => {
     
     return (
         <div>
-           <h1 className='text-4xl'>Countries length : {courtries.length}</h1>
+          {
+            courtries.map( country=> <Country key={country.cca3.cca3} country={country}></Country>)
+          }
         </div>
     );
 };
