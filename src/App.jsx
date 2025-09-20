@@ -7,9 +7,11 @@ let apiUrl=fetch('https://openapi.programming-hero.com/api/all')
 function App() {
   return (
     <>
-    <Suspense fallback={<p>Data is Loading</p>}>
+      <div className="max-w-[1250px] mx-auto">
+         <Suspense fallback={<p>Data is Loading</p>}>
       <Countries apiUrl={apiUrl}></Countries>
     </Suspense>
+      </div>
      
     </>
   );
